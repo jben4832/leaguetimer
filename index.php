@@ -27,26 +27,25 @@
                             <h1>League of Legends Spell Timers
 							<?php
 
-//require_once('config.php');
-$serverName = "leaguetimer.database.windows.net";
-//$connectionOptions = config['db'];
-$connectionOptions = array(
-    "Database" => "LeagueChamps",
-    "Uid" => "league",
-    "PWD" => "Assass69"
-	
-//Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-$myData - mysql_query("SELECT * FROM leaguechamps WHERE ChampID = 1"
-$results = myData($connectionOptions, $myData);
-$row = mysqli_fetch_array($results);
+								//require_once('config.php');
+								$serverName = "leaguetimer.database.windows.net";
+								//$connectionOptions = config['db'];
+								$connectionOptions = array(
+									"Database" => "LeagueChamps",
+									"Uid" => "league",
+									"PWD" => "Assass69"
+									
+								//Establishes the connection
+								$conn = sqlsrv_connect($serverName, $connectionOptions);
+								$myData - mysql_query("SELECT * FROM leaguechamps WHERE ChampID = 1"
+								$results = myData($connectionOptions, $myData);
+								$row = mysqli_fetch_array($results);
 
-while ($row = mysqli_fetch_array($results)) {
- echo $row['ChampID'] . ' ' . $row['name'] . '<br />';
-}
-?></h1>
-							
-							
+								
+								 echo $row['ChampID'] . ' ' . $row['name'] . '<br />';
+								
+								?>
+							</h1>
                             <h2> </h2>
                         </div>
                     </div>
@@ -54,7 +53,7 @@ while ($row = mysqli_fetch_array($results)) {
             </div>
         </section>
 		
-		
+
          <section class="home-area">
             <div class="home_content">
                 <div class="container">
