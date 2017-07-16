@@ -24,8 +24,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h1>League of Legends Spell Timers</h1>
-							
+                            <h1>League of Legends Spell Timers
 							<?php
 
 //require_once('config.php');
@@ -38,10 +37,17 @@ $connectionOptions = array(
 	
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-?>
-                            <h2> <?php $myData - mysql_query("SELECT * FROM leaguechamps WHERE ChampID = 1");
-							while($record = my_fetch_array($myData)) 
-								echo ($myData['ChampID'] . " " . $myData['name'] . PHP_Eol);?></h2>
+$myData - mysql_query("SELECT * FROM leaguechamps WHERE ChampID = 1"
+$results = myData($connectionOptions, $myData);
+$row = mysqli_fetch_array($results);
+
+while ($row = mysqli_fetch_array($results)) {
+ echo $row['ChampID'] . ' ' . $row['name'] . '<br />';
+}
+?></h1>
+							
+							
+                            <h2> </h2>
                         </div>
                     </div>
                 </div>
