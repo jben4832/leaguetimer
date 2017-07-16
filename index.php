@@ -19,25 +19,7 @@
 </head>
 <body>
 
-<?php
 
-require_once('config.php');
-$serverName = "leaguetimer.database.windows.net";
-$connectionOptions = config['db'];
-);
-//Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-$tsql= "SELECT * 
-		FROM leagueChamps;";
-$getResults= sqlsrv_query($conn, $tsql);
-echo ("Reading data from table" . PHP_EOL);
-if ($getResults == FALSE)
-    echo (sqlsrv_errors());
-while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
- echo ($row['CategoryName'] . " " . $row['ProductName'] . PHP_EOL);
-}
-sqlsrv_free_stmt($getResults);
-?>
     <main class="site-main">
         <section class="hero_area">
             <div class="hero_content">
