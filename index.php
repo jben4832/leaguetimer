@@ -1,9 +1,13 @@
 <?php
 
-require_once('config.php');
+//require_once('config.php');
 $serverName = "leaguetimer.database.windows.net";
-$connectionOptions = config['db'];
-
+//$connectionOptions = config['db'];
+$connectionOptions = array(
+    "Database" => "LeagueChamps",
+    "Uid" => "league",
+    "PWD" => "Assass69"
+	
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 ?>
