@@ -1,3 +1,13 @@
+<?php
+
+require_once('config.php');
+$serverName = "leaguetimer.database.windows.net";
+$connectionOptions = config['db'];
+
+//Establishes the connection
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,21 +28,6 @@
     <![endif]-->
 </head>
 <body>
-
-<?php
-
-require_once('config.php');
-$serverName = "leaguetimer.database.windows.net";
-$connectionOptions = config['db'];
-
-//Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-$tsql= "SELECT * 
-		FROM leagueChamps;";
-$getResults= sqlsrv_query($conn, $tsql);
-
-sqlsrv_free_stmt($getResults);
-?>
     <main class="site-main">
         <section class="hero_area">
             <div class="hero_content">
@@ -40,7 +35,9 @@ sqlsrv_free_stmt($getResults);
                     <div class="row">
                         <div class="col-sm-12">
                             <h1>League of Legends Spell Timers</h1>
-                            <h2> <?php printf(sqlsrv_free_stmt); ?></h2>
+                            <h2> <?php $myData - mysql_query("SELECT * FROM leaguechamps WHERE ChampID = 1");
+							while($record = my_fetch_array($myData)) 
+								echo ($myData['ChampID'] . " " . $myData['name'] . PHP_Eol);?></h2>
                         </div>
                     </div>
                 </div>
