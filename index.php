@@ -20,11 +20,10 @@
 <body>
 
 <?php
-$serverName = "your_server.database.windows.net";
-$connectionOptions = array(
-    "Database" => "your_database",
-    "Uid" => "your_username",
-    "PWD" => "your_password"
+
+require_once('config.php');
+$serverName = "leaguetimer.database.windows.net";
+$connectionOptions = config['db'];
 );
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
