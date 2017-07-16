@@ -24,15 +24,14 @@
 require_once('config.php');
 $serverName = "leaguetimer.database.windows.net";
 $connectionOptions = config['db'];
-);
+
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $tsql= "SELECT * 
 		FROM leagueChamps;";
 $getResults= sqlsrv_query($conn, $tsql);
-}
+
 sqlsrv_free_stmt($getResults);
-printf(sqlsrv_free_stmt);
 ?>
     <main class="site-main">
         <section class="hero_area">
@@ -41,7 +40,7 @@ printf(sqlsrv_free_stmt);
                     <div class="row">
                         <div class="col-sm-12">
                             <h1>League of Legends Spell Timers</h1>
-                            <h2></h2>
+                            <h2> <?php printf(sqlsrv_free_stmt); ?></h2>
                         </div>
                     </div>
                 </div>
