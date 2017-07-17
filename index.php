@@ -18,8 +18,9 @@
     <![endif]-->
 	<?php function test()
 	{
-		echo["hello"] ?>
+		echo["hello"]
 	}
+	?>
 </head>
 <body>
     <main class="site-main">
