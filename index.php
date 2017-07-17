@@ -25,7 +25,9 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <h1>League of Legends Spell Timers
-								<?php include('connect.php') ?>
+								<?php include('connect.php')  
+								connect(); 
+								query();?>
 								 
 							</h1>
                             <h2> </h2>
