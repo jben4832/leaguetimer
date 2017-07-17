@@ -1,6 +1,6 @@
 <?php
 include_once 'champquery.php';
-connect();
+
 ?>
 
 <!DOCTYPE html>
@@ -31,10 +31,10 @@ connect();
                     <div class="row">
                         <div class="col-sm-12">
                             <h1>League of Legends Spell Timers</h1>
-                            <select name="dropdown"> 
+                            <p> 
 								<?php InsertData() ?>
 								
-							</select>
+							</p>
 								
                         </div>
                     </div>
