@@ -1,5 +1,5 @@
 <?php
-include_once ('champquery.php');
+require ('champquery.php');
 
 ?>
 
