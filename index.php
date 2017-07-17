@@ -1,26 +1,23 @@
 <?php
 public function connect()
 	{
-		$host = "leaguetimer.database.windows.net";
-		 $user = "league";
-		 $pwd = "Assass69";
-		 $db = "LeagueChamps";
-		
-		try
-		{
-			$conn = new PDO("mysql:host=".$this->dbHostname.";dbname=".$this->dbDatabase, $this->dbUsername, $this->dbPassword);
-			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
-		     $sql = "SELECT * FROM LeagueChamps;";
-			 $conn->query($sql);
-		 }
-		 catch(Exception $e){
-			 die(print_r($e));
-		 }
-		 while ($query !empty)) 
-		{
-			echo ($row['ChampID'] . " " . $row['Name'] . PHP_EOL);
+		$serverName = "leaguetimer.database.windows.net";
+		$connectionOptions = array(
+			"Database" => "leaguechamps",
+			"Uid" => "league",
+			"PWD" => "Assass69"
+		);
+		//Establishes the connection
+		$conn = sqlsrv_connect($serverName, $connectionOptions);
+		$tsql= "SELECT * FROM leaguechamps";
+		$getResults= sqlsrv_query($conn, $tsql);
+		if ($getResults == FALSE)
+			echo (sqlsrv_errors());
+		while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+		 echo ($row['ChampID'] . " " . $row['Name'] . PHP_EOL);
 		}
+		sqlsrv_free_stmt($getResults);
+
 	}
 ?>
 
@@ -54,7 +51,7 @@ public function connect()
                             <h1>League of Legends Spell Timers
 								  
 								connect(); 
-								query();
+								
 								 
 							</h1>
                             <h2> </h2>

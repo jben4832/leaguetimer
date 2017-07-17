@@ -1,6 +1,4 @@
 <?php
-
-
 $serverName = "leaguetimer.database.windows.net";
 $connectionOptions = array(
     "Database" => "leaguechamps",
