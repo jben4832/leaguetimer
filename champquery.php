@@ -11,14 +11,16 @@
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 		     $sql = "SELECT * FROM LeagueChamps;";
-			 $conn->query($sql);
+			 $stmt =$conn->query($sql);
+			 $row = $stmt->fetch();
 		}
 		 catch(Exception $e)
 		{
 			 die(print_r($e));
 		}
-		 while ($query !empty)) 
+		 while ($row !empty)) 
 		{
-			echo ($row['ChampID'] . " " . $row['Name'] . PHP_EOL);
+			echo "$row[0] $row[1]";
 		}
+		$conn = NULL;
 ?>
