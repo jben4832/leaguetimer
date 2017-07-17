@@ -18,12 +18,28 @@
 		
 	}
 	
-	function query(){
-		$myData = mysql_query("SELECT * FROM leaguechampsdata");
-		while($record = mysql_fetch_array($myData)){
-		echo '<option value="' . $record['ChampID'] . '">' . $record[name] . '<option>';
-			
-		}
-		
-	}
+	function InsertData()  
+    {  
+        try  
+        {  
+            $conn = connect();  
+
+            $tsql = "SELECT * FROM LeagueChamps.leaguechampsdata";  
+            //Insert query  
+            $insertReview = sqlsrv_query($conn, $tsql);  
+            if($insertReview == FALSE)  
+                die(FormatErrors( sqlsrv_errors()));  
+              
+            while($row = sqlsrv_fetch_array($insertReview, SQLSRV_FETCH_ASSOC))  
+            {     
+                echo($row['ChampID']);  
+            }  
+            sqlsrv_free_stmt($insertReview);  
+            sqlsrv_close($conn);  
+        }  
+        catch(Exception $e)  
+        {  
+            echo("Error!");  
+        }  
+    }  
 ?>

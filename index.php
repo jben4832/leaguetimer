@@ -32,10 +32,10 @@ connect();
                         <div class="col-sm-12">
                             <h1>League of Legends Spell Timers</h1>
                             <select name="dropdown"> 
-								<?php query() ?>
+								<?php InsertData() ?>
 								
 							</select>
-								<?php close() ?>
+								
                         </div>
                     </div>
                 </div>
