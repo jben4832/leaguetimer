@@ -48,7 +48,7 @@ public function connect() {
                         <div class="col-sm-12">
                             <h1>League of Legends Spell Timers
 								  
-								connect();
+								
 								
 								 
 							</h1>
