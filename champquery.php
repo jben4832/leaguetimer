@@ -16,7 +16,7 @@
 	function query(){
 		$myData = mysql_query("SELECT * FROM leaguechampsdata");
 		while($record = mysql_fetch_array($myData)){
-		echo '<option value="' . $record['ChampID'] . '">' . $record[name] . '"<option>';
+		echo '<option value="' . $record['ChampID'] . '">' . $record[name] . '<option>';
 			
 		}
 		
