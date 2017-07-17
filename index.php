@@ -1,9 +1,9 @@
 <?php
 public function connect() {
-	$serverName = "leaguetimer.database.windows.net";
+	$serverName = "leaguetimer.database.windows.net, 1433";
 	$connectionOptions = array(
-		"Database" => "leaguechamps",
-		"Uid" => "league",
+		"Database" => "LeagueChamps",
+		"Uid" => "league@leaguetimer",
 		"PWD" => "Assass69"
 	);
 	//Establishes the connection
