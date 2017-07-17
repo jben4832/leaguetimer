@@ -33,7 +33,7 @@ require ('champquery.php');
                             <h1>League of Legends Spell Timers</h1>
                             <p algin='center'> 
 								<select name"dropdown">
-									<?php InsertData() ?>
+									<?php InsertData(); ?>
 								</select>
 								
 							</p>
