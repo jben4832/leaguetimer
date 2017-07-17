@@ -25,7 +25,8 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <h1>League of Legends Spell Timers
-								 <?php echo $query['ChampId']?>
+								<?php include('connect.php') ?>
+								 
 							</h1>
                             <h2> </h2>
                         </div>
