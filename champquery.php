@@ -4,8 +4,8 @@
 	
 	function connect() {
 		
-		mysql_connect(DB_HOST, DB_USER, DB_PASS) or die('Couldnt not connect' . mysql_error());
-		mysql_select_db(DB_NAME);		
+		$conn = sqlsrv_connect($serverName, $connectionOptions);or die('Couldnt not connect' . mysql_error());
+			
 	}
 	
 	function close() {
