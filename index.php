@@ -32,7 +32,7 @@ require ('champquery.php');
                         <div class="col-sm-12">
                             <h1>League of Legends Spell Timers</h1>
                             <p algin='center'> 
-								<select name"dropdown">
+								<select name"sqlsrv_free_stmt">
 									<?php InsertData(); ?>
 								</select>
 								
