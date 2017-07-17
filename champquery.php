@@ -18,9 +18,8 @@
 		{
 			 die(print_r($e));
 		}
-		 while ($row !empty)) 
-		{
-			echo "$row[0] $row[1]";
-		}
+
+		echo "$row[0] $row[1]";
+
 		$conn = NULL;
 ?>
