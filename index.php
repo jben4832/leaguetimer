@@ -26,7 +26,7 @@
                         <div class="col-sm-12">
                             <h1>League of Legends Spell Timers
 							<?php
-								
+								/*
 								//require_once('config.php');
 								$serverName = "leaguetimer.database.windows.net";
 								//$connectionOptions = config['db'];
@@ -47,7 +47,24 @@
 
 								}
 								sqlsrv_free_stmt($getResults);
-								?>
+								*/
+								$host ="leaguetimer.database.windows.net, 1433";
+								$dnname ="leaguechamps";
+								$user ="league";
+								$pwd ="Assass69"
+								
+								try{
+									 $conn = new PDO( "mysql:host=$host; dbname=$db", $user, $pwd);
+									 $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+									 $sql = "SELECT ChampId FROM leaguechamps WHERE ChampId = 1;";
+									 $conn->query($sql);
+								 }
+								 catch(Exception $e){
+									 die(print_r($e));
+								 }
+								 ?>
+								 
+								 <?php echo $query['ChampId']?>
 							</h1>
                             <h2> </h2>
                         </div>
