@@ -33,7 +33,7 @@
 								$connectionOptions = array(
 									"Database" => "LeagueChamps",
 									"Uid" => "league",
-									"PWD" => "Assass69"
+									"PWD" => "Assass69")
 									
 								//Establishes the connection
 								$conn = sqlsrv_connect($serverName, $connectionOptions);
