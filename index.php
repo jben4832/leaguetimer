@@ -1,22 +1,6 @@
 <?php
-public function connect() {
-	$serverName = "leaguetimer.database.windows.net, 1433";
-	$connectionOptions = array(
-		"Database" => "LeagueChamps",
-		"Uid" => "league@leaguetimer",
-		"PWD" => "Assass69"
-	);
-	//Establishes the connection
-	$conn = sqlsrv_connect($serverName, $connectionOptions);
-	$tsql= "SELECT * FROM leaguechamps";
-	$getResults= sqlsrv_query($conn, $tsql);
-	if ($getResults == FALSE)
-		echo (sqlsrv_errors());
-	while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-	 echo ($row['ChampID'] . " " . $row['Name'] . PHP_EOL);
-	}
-	sqlsrv_free_stmt($getResults);
-}
+include_once 'champquery.php';
+connect();
 ?>
 
 <!DOCTYPE html>
@@ -46,13 +30,12 @@ public function connect() {
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h1>League of Legends Spell Timers
-								  
-								<p> <?php connect()?></p>
+                            <h1>League of Legends Spell Timers</h1>
+                            <select name="dropdown"> 
+								<?php query() ?>
 								
-								 
-							</h1>
-                            <h2> </h2>
+							</select>
+								<?php close() ?>
                         </div>
                     </div>
                 </div>

@@ -1,20 +1,24 @@
 <?php
-public function connect() {
-	$serverName = "leaguetimer.database.windows.net";
-	$connectionOptions = array(
-		"Database" => "leaguechamps",
-		"Uid" => "league",
-		"PWD" => "Assass69"
-	);
-	//Establishes the connection
-	$conn = sqlsrv_connect($serverName, $connectionOptions);
-	$tsql= "SELECT * FROM leaguechamps";
-	$getResults= sqlsrv_query($conn, $tsql);
-	if ($getResults == FALSE)
-		echo (sqlsrv_errors());
-	while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-	 echo ($row['ChampID'] . " " . $row['Name'] . PHP_EOL);
+
+	include_once 'connect.php';
+	
+	function connect() {
+		
+		mysql_connect(DB_HOST, DB_USER, DB_PASS) or die('Couldnt not connect' . mysql_error());
+		mysql_select_db(DB_NAME);		
 	}
-	sqlsrv_free_stmt($getResults);
-}
+	
+	function close() {
+		mysql_close();
+		
+	}
+	
+	function query(){
+		$myData = mysql_query("SELECT * FROM leaguechampsdata");
+		while($record = mysql_fetch_array($myData)){
+		echo '<option value="' . $record['ChampID'] . '">' . $record[name] . '"<option>';
+			
+		}
+		
+	}
 ?>
