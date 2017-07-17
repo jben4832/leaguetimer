@@ -1,10 +1,13 @@
 <?php
-
-	include_once 'connect.php';
+$serverName = "leaguetimer.database.windows.net";
+$connectionOptions = array(
+    "Database" => "LeagueChamps",
+    "Uid" => "league",
+    "PWD" => "Assass69")
 	
 	function connect() {
 		
-		$conn = sqlsrv_connect($serverName, $connectionOptions);or die('Couldnt not connect' . mysql_error());
+		$conn = sqlsrv_connect($serverName, $connectionOptions);or die('Couldnt not connect ' . mysql_error());
 			
 	}
 	
