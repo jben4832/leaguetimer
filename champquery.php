@@ -1,4 +1,5 @@
 <?php
+echo hi
 
 		$host = "leaguetimer.database.windows.net";
 		$user = "league";
