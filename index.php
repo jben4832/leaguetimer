@@ -26,7 +26,7 @@
                         <div class="col-sm-12">
                             <h1>League of Legends Spell Timers
 							<?php
-
+								
 								//require_once('config.php');
 								$serverName = "leaguetimer.database.windows.net";
 								//$connectionOptions = config['db'];
@@ -37,13 +37,16 @@
 									
 								//Establishes the connection
 								$conn = sqlsrv_connect($serverName, $connectionOptions);
-								$myData - mysql_query("SELECT * FROM leaguechamps WHERE name = "Lulu";"
-								$results = myData($connectionOptions, $myData);
-								$row = mysqli_fetch_array($results);
+								$tsql= "SELECT ChampId, Name FROM LeagueChamps.leaguechamps;";
+								$getResults= sqlsrv_query($conn, $tsql);
+								echo ("Reading data from table" . PHP_EOL);
+								if ($getResults == FALSE)
+									die(FormatErrors(sqlsrv_errors()));
+								while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+									echo ($row['CHampId'] . " " . $row['Name'] . PHP_EOL);
 
-								
-								 echo $row['ChampID'] . ' ' . $row['name'] . '<br />';
-								
+								}
+								sqlsrv_free_stmt($getResults);
 								?>
 							</h1>
                             <h2> </h2>
