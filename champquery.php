@@ -24,7 +24,7 @@
         {  
             $conn = connect();  
 
-            $tsql = "SELECT * FROM LeagueChamps.leaguechampsdata";  
+            $tsql = "SELECT * FROM leaguechampsdata";  
             //Insert query  
             $insertReview = sqlsrv_query($conn, $tsql);  
             if($insertReview == FALSE)  
