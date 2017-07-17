@@ -31,8 +31,10 @@ include_once 'champquery.php';
                     <div class="row">
                         <div class="col-sm-12">
                             <h1>League of Legends Spell Timers</h1>
-                            <p> 
-								<?php InsertData() ?>
+                            <p algin='center'> 
+								<select name"dropdown">
+									<?php InsertData() ?>
+								</select>
 								
 							</p>
 								
