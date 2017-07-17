@@ -1,14 +1,16 @@
 <?php
-$serverName = "leaguetimer.database.windows.net";
-$connectionOptions = array(
-    "Database" => "LeagueChamps",
-    "Uid" => "league",
-    "PWD" => "Assass69")
+
 	
 	function connect() {
 		
-		$conn = sqlsrv_connect($serverName, $connectionOptions);or die('Couldnt not connect ' . mysql_error());
-			
+		try {
+			$conn = new PDO("sqlsrv:server = tcp:leaguetimer.database.windows.net,1433; Database = LeagueChamps", "league", "{Assass69}");
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		}
+		catch (PDOException $e) {
+			print("Error connecting to SQL Server.");
+			die(print_r($e));
+		}	
 	}
 	
 	function close() {
